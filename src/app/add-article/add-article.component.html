@@ -1,0 +1,27 @@
+<!-- ngForm de marche que si on déclare FormModule dans les imports de ngModule dans app.module.ts -->
+<form #artform="ngForm" (ngSubmit)="createArticle(artform);">
+  <div class="form-group">
+    <label for="articleLabel">Article Label </label>
+    <input ngModel name="articleLabel" size="20" type="text" class="form-control" id="articleLabel" />
+  </div>
+  <div class="form-group">
+    <label for="articlePrice">Article Price </label>
+    <input ngModel name="articlePrice" size="20" type="text" class="form-control" id="articlePrice" />
+  </div>
+  <div class="form-group">
+    <label for="articlePicture">Article Picture </label>
+    <input ngModel name="articlePicture" size="20" type="text" class="form-control" id="articlePicture"  />
+  </div>
+  
+  <div class="form-group">
+        <label for="articleProvider">Article Provider </label>
+        <select class="custom-select" ngModel name="articleProvider">
+            <option [value]="provider.id" *ngFor="let provider of providers"  >
+            {{provider.name}}
+            </option>
+        </select>
+  </div>
+
+  <button class="btn btn-primary">Ajouter</button>
+</form>
+

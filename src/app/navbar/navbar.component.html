@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#" *ngIf="loginService.isUserLoggedIn()" >Providers</a>
+   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+     <div class="navbar-nav">
+       <a class="nav-item nav-link" routerLink="/listProvider" *ngIf="loginService.isUserLoggedIn()" routerLinkActive="active">Liste</a>
+       <a class="nav-item nav-link" routerLink="/addProvider" *ngIf="loginService.isUserLoggedIn()" routerLinkActive="active">Ajouter</a>
+      </div>
+    </div>
+    <a class="navbar-brand" href="#" *ngIf="loginService.isUserLoggedIn()" >Articles</a>
+   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+     <div class="navbar-nav">
+       <a class="nav-item nav-link" routerLink="/listArticle" *ngIf="loginService.isUserLoggedIn()" routerLinkActive="active">Liste</a>
+       <a class="nav-item nav-link" routerLink="/addArticle" *ngIf="loginService.isUserLoggedIn()" routerLinkActive="active">Ajouter</a>
+    </div>
+  </div>
+  
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/login" *ngIf="! loginService.isUserLoggedIn()" routerLinkActive="active">Login</a>
+        <a class="nav-item nav-link" routerLink="/logout" *ngIf="loginService.isUserLoggedIn()" routerLinkActive="active">Logout</a>
+       </div>
+  
+  
+   
+
+</nav>
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  
+  <router-outlet></router-outlet>
